@@ -9,24 +9,42 @@
 </head>
 <body>
   <div class="container">
-    <main class="row">
-      <section class="player1 col-6">
-        <h2>PLAYER 1</h2>
-        <p id="player1Score">0</p>
-        <div id="player1Current">
-          <p>Current</p>
-          <p id="player1Roll">0</p>
+    <header class="row">
+      <p class="newGame col">NEW GAME</p>
+    </header>
+    <main class="row justify-content-center">
+      <section class="player1 col-6 text-center bg-light">
+        <div class="row username">
+          <h2 class="col p-0 align-self-center">PLAYER 1</h2>
+          <p id="player1Score">0</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-3 m-2 current bg-danger">
+            <p class="m-1">CURRENT</p>
+            <p id="player1Roll">0</p>
+          </div>
         </div>
       </section>
-      <section class="player2 col-6">
-        <h2>PLAYER 2</h2>
-        <p id="player2Score">0</p>
-        <div id="player1Current">
-          <p>Current</p>
-          <p id="player1Roll">0</p>
+
+      <section class="player2 col-6 text-center bg-white">
+        <div class="row username">
+          <h2 class="col p-0 align-self-center">PLAYER 2</h2>
+          <p id="player2Score">0</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-3 m-2 current bg-danger align-self-center">
+            <p class="m-1">CURRENT</p>
+            <p id="player2Roll">0</p>
+          </div>
         </div>
       </section>
     </main>
+    <footer class="row">
+      <p class="rollDice col-12">Roll Dice</p>
+      <p class="hold col-12">Hold</p>
+    </footer>
+  </div>
+  </div>
   </div>
   <script src="script.js"></script>
 </body>
