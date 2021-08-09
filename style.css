@@ -32,7 +32,7 @@ section {
 }
 
 #newGame {
-  top: 4em;
+  top: 5em;
 }
 
 #rollDice{
@@ -41,6 +41,11 @@ section {
 
 #hold{
   bottom: 10em;
+}
+
+#diceFace {
+  position: relative;
+  top: 20em;
 }
 
 #player1Score,#player2Score {
