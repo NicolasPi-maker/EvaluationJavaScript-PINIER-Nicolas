@@ -1,7 +1,7 @@
 /* Lato font-family Init*/
 @font-face {
   font-family: Lato;
-  src: url(Lato/Lato-Light.ttf);
+  src: url(image/Lato/Lato-Light.ttf);
 }
 
 body {
@@ -9,22 +9,34 @@ body {
   background: url(image/background.jpg);
 }
 
-.newGame,.rollDice,.hold {
+section {
+  height: 30em;
+  width: auto;
+}
+
+.user {
+  position: relative;
+  top: 5em;;
+}
+
+.currentRound {
+  position: relative;
+  bottom: -10em;
+  width: auto;
+}
+
+.gameSettings {
   text-align: center;
   position: relative;
   font-size: 1.1em;
 }
 
-.newGame {
-  top: 70px;
+#newGame {
+  top: 4em;
 }
 
-.rollDice {
-  bottom: 85px;
-}
-
-.hold {
-  bottom: 85px;
+#rollDice,#hold {
+  bottom: 9em;
 }
 
 #player1Score,#player2Score {
@@ -32,6 +44,7 @@ body {
   color: crimson;
 }
 
-.username {
-  height: 25em;
+.gameSettings:hover{
+  color: crimson;
 }
+

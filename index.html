@@ -3,45 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./image/Bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Evaluation - JAVASCRIPT</title>
 </head>
 <body>
   <div class="container">
     <header class="row">
-      <p class="newGame col">NEW GAME</p>
+      <p class="gameSettings col" id="newGame">NEW GAME</p>
     </header>
-    <main class="row justify-content-center">
-      <section class="player1 col-6 text-center bg-light">
-        <div class="row username">
-          <h2 class="col p-0 align-self-center">PLAYER 1</h2>
-          <p id="player1Score">0</p>
-        </div>
+    <main class="row">
+      <section class="player1 col-6 text-center bg-light align-items-center">
         <div class="row justify-content-center">
-          <div class="col-3 m-2 current bg-danger">
-            <p class="m-1">CURRENT</p>
-            <p id="player1Roll">0</p>
+          <div class="user col-12 p-0 m-0">
+            <h2>PLAYER 1</h2>
+            <p id="player1Score">72</p>
+          </div>
+          <div class="currentRound col-2 p-0 m-1 current bg-danger">
+            <p class="p-0 m-1">CURRENT</p>
+            <p class="p-0 m-0 text-light fs-3" id="player2Roll">0</p>
           </div>
         </div>
       </section>
-
       <section class="player2 col-6 text-center bg-white">
-        <div class="row username">
-          <h2 class="col p-0 align-self-center">PLAYER 2</h2>
-          <p id="player2Score">0</p>
-        </div>
         <div class="row justify-content-center">
-          <div class="col-3 m-2 current bg-danger align-self-center">
-            <p class="m-1">CURRENT</p>
-            <p id="player2Roll">0</p>
+          <div class="user col-12 p-0 m-0">
+            <h2>PLAYER 2</h2>
+            <p id="player2Score">43</p>
+          </div>
+          <div class="currentRound col-2 p-0 m-1 current bg-danger">
+            <p class="p-0 m-1">CURRENT</p>
+            <p class="p-0 m-0 text-light fs-3" id="player2Roll">0</p>
           </div>
         </div>
       </section>
     </main>
-    <footer class="row">
-      <p class="rollDice col-12">Roll Dice</p>
-      <p class="hold col-12">Hold</p>
+      <footer class="row">
+      <p class="gameSettings col-12" id="rollDice">Roll Dice</p>
+      <p class="gameSettings col-12" id="hold">Hold</p>
     </footer>
   </div>
   </div>
