@@ -45,7 +45,9 @@ section {
 
 #diceFace {
   position: relative;
-  top: 20em;
+  bottom: 28em;
+  width: 9%;
+  height: 9%;
 }
 
 #player1Score,#player2Score {
