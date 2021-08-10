@@ -55,5 +55,6 @@ section {
 
 .gameSettings:hover{
   color: crimson;
+  cursor: pointer;
 }
 
