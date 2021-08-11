@@ -1,3 +1,7 @@
+//Players name
+let player1Name = document.getElementById('player1Name');
+let player2Name = document.getElementById('player2Name');
+
 //Players score
 let player1Score = document.getElementById('player1Score');
 let player2Score = document.getElementById('player2Score');
@@ -17,10 +21,11 @@ let diceNumber = null;
 
 //Reset game
 const resetGame = () => {
-  const tableSettings = [player1Score,player2Score,totalDiceRoll1,totalDiceRoll2];
+  const tableSettings = [player1Score,player2Score,totalDiceRoll2,totalDiceRoll1];
   tableSettings.forEach(element => {
     element.innerHTML = 0;
   });
+  displayFace(1);
 }
 
 //New Game Function
@@ -28,11 +33,11 @@ newGame.addEventListener('click',() => {
   alert('Nouvelle Partie !');
   resetGame();
   currentPlayer = Math.floor(Math.random()*2);
-  currentPlayerPing(currentPlayer);
+  StartPlayerPing(currentPlayer);
 });
 
 //Small red dot indicate current player turn
-const currentPlayerPing = (number) => {
+const StartPlayerPing = (number) => {
   if(number === 0) {
     alert('Player 1 commence !');
 
@@ -52,29 +57,50 @@ const diceFaceUrlTable = [
   'images/images/Dice6.png'
 ];
 
-//Roll Dice Display function
-const displayFace = (dicenumber) => {
-  imgDice.getAttribute("src");
-  imgDice.setAttribute("src",diceFaceUrlTable[diceNumber -1]);
-}
-
 //Roll Dice
 rollDice.addEventListener('click',() => {
   let min = 1;
   let max = 6;
   diceNumber = Math.floor(Math.random()*(max - min + 1) + min);
+  if(currentPlayer === 0) {
+    totalDiceRoll1.innerHTML++;
+  } else {
+    totalDiceRoll2.innerHTML++;
+  }
   displayFace(diceNumber);
+  if(diceNumber === 1) {
+    changePlayer();
+  }
 });
+
+//Roll Dice Faces Display function
+const displayFace = (diceNumber) => {
+  imgDice.getAttribute("src");
+  imgDice.setAttribute("src",diceFaceUrlTable[diceNumber -1]);
+}
+
+//Hold
+hold.addEventListener('click',() => {
+  if(currentPlayer === 0) {
+    player1Score.innerHTML =  parseInt(player1Score.innerHTML) + diceNumber;
+  } else {
+    player2Score.innerHTML = parseInt(player2Score.innerHTML) + diceNumber;
+  }
+  changePlayer();
+  diceNumber = 1;
+  displayFace(1);
+})
 
 //Change Player
 const changePlayer = () => {
-  if(currentPlayer === 1) {
-    currentPlayer = 2;
-  } else {
+  if(currentPlayer === 0) {
     currentPlayer = 1;
+  } else {
+    currentPlayer = 0;
   }
-  currentPlayerPing(currentPlayer);
+  StartPlayerPing(currentPlayer);
 }
+
 
 
 

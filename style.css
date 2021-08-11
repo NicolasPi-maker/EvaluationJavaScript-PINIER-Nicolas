@@ -10,18 +10,18 @@ body {
 }
 
 section {
-  height: 30em;
+  height: 40em;
   width: auto;
 }
 
 .user {
   position: relative;
-  top: 5em;;
+  top: 8em;;
 }
 
 .currentRound {
   position: relative;
-  bottom: -10em;
+  top: 18em;
   width: auto;
 }
 
@@ -36,18 +36,18 @@ section {
 }
 
 #rollDice{
-  bottom: 9.5em;
+  bottom: 11.5em;
 }
 
 #hold{
-  bottom: 10em;
+  bottom: 12em;
 }
 
 #diceFace {
   position: relative;
-  bottom: 28em;
-  width: 9%;
-  height: 9%;
+  bottom: 35.5em;
+  width: 6.5em;
+  height: 5.25em;
 }
 
 #player1Score,#player2Score {
