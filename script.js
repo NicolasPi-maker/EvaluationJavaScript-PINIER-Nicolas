@@ -21,12 +21,28 @@ let diceNumber = null;
 
 //Reset game
 const resetGame = () => {
-  const tableSettings = [player1Score,player2Score,totalDiceRoll2,totalDiceRoll1];
-  tableSettings.forEach(element => {
-    element.innerHTML = 0;
-  });
+  resetGlobalScore();
+  resetCurrentScore();
   displayFace(1);
-}
+  rollDice.style.display = 'block';
+  hold.style.display = 'block';
+};
+
+//Reset all global score
+const resetGlobalScore = () => {
+  let tableGlobalScore = [player1Score,player2Score];
+  tableGlobalScore.forEach(globalScore => {
+    globalScore.innerHTML = 0;
+  })
+};
+
+//Reset all current score
+const resetCurrentScore = () => {
+  let tableCurrentScore = [totalDiceRoll2,totalDiceRoll1];
+  tableCurrentScore.forEach(currentScore => {
+    currentScore.innerHTML = 0;
+  })
+};
 
 //New Game Function
 newGame.addEventListener('click',() => {
@@ -40,11 +56,13 @@ newGame.addEventListener('click',() => {
 const StartPlayerPing = (number) => {
   if(number === 0) {
     alert('Player 1 commence !');
-
+    player1Name.style.fontWeight = 'bold';
   } else {
     alert('Player 2 commence !');
+    player2Name.style.fontWeight = 'bold';
   }
-}
+  playerTurnIndicator();
+};
 
 //Dice Faces display
 const imgDice = document.getElementById('diceFace');
@@ -63,9 +81,9 @@ rollDice.addEventListener('click',() => {
   let max = 6;
   diceNumber = Math.floor(Math.random()*(max - min + 1) + min);
   if(currentPlayer === 0) {
-    totalDiceRoll1.innerHTML++;
+    totalDiceRoll1.innerHTML = parseInt(totalDiceRoll1.innerHTML) + diceNumber;
   } else {
-    totalDiceRoll2.innerHTML++;
+    totalDiceRoll2.innerHTML = parseInt(totalDiceRoll2.innerHTML) + diceNumber;
   }
   displayFace(diceNumber);
   if(diceNumber === 1) {
@@ -77,40 +95,54 @@ rollDice.addEventListener('click',() => {
 const displayFace = (diceNumber) => {
   imgDice.getAttribute("src");
   imgDice.setAttribute("src",diceFaceUrlTable[diceNumber -1]);
-}
+};
 
 //Hold
 hold.addEventListener('click',() => {
   if(currentPlayer === 0) {
-    player1Score.innerHTML =  parseInt(player1Score.innerHTML) + diceNumber;
+    player1Score.innerHTML =  parseInt(player1Score.innerHTML) + parseInt(totalDiceRoll1.innerHTML);
   } else {
-    player2Score.innerHTML = parseInt(player2Score.innerHTML) + diceNumber;
+    player2Score.innerHTML = parseInt(player2Score.innerHTML) + parseInt(totalDiceRoll2.innerHTML);
   }
   changePlayer();
   diceNumber = 1;
   displayFace(1);
-})
+  endGame();
+});
 
 //Change Player
 const changePlayer = () => {
-  if(currentPlayer === 0) {
-    currentPlayer = 1;
-  } else {
+  if(currentPlayer === 1) {
     currentPlayer = 0;
+  } else {
+    currentPlayer = 1;
   }
   StartPlayerPing(currentPlayer);
+  playerTurnIndicator();
+  resetCurrentScore();
+};
+
+//Current player turn indicator
+const playerTurnIndicator = () => {
+  if(currentPlayer !== 1) {
+    player1Name.style.fontWeight = 'bold';
+    player2Name.style.fontWeight = 'normal';
+  } else {
+    player2Name.style.fontWeight = 'bold';
+    player1Name.style.fontWeight = 'normal';
+  }
+};
+
+//End Game Condition
+const endGame = () => {
+  if(parseInt(player1Score.innerHTML) >= 100){
+    alert('Le joueur 1 gagne la partie');
+    rollDice.style.display = 'none';
+    hold.style.display = 'none';
+  } else if(parseInt(player2Score.innerHTML) >= 100) {
+    alert('Le joueur 2 gagne la partie');
+    rollDice.style.display = 'none';
+    hold.style.display = 'none';
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 

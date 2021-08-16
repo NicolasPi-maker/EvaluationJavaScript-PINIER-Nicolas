@@ -9,6 +9,9 @@
 </head>
 <body>
   <div class="container">
+    <div class="row justify-content-center">
+      <img id="diceFace" src="images/images/Dice1.png" alt="DiceFace">
+    </div>
     <header class="row justify-content-center">
       <p class="gameSettings col-6 col-sm-4 col-lg-3" id="newGame"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-plus-circle p-1 m-1 text-danger" viewBox="0 0 16 16">
         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -20,10 +23,10 @@
       <section class="player1 col-6 text-center bg-light align-items-center">
         <div class="row justify-content-center">
           <div class="user col-12 p-0 m-0">
-            <h2 id="player1Name">PLAYER 1</h2>
+            <p id="player1Name" class="fs-1">PLAYER 1</p>
             <p id="player1Score">72</p>
           </div>
-          <div class="currentRound col-2 px-1 m-1 current bg-danger">
+          <div class="currentRound col-2 px-1 my-1 mx-3 current bg-danger">
             <p class="px-2 m-2 fs-6">CURRENT</p>
             <p class="p-0 m-0 text-light fs-3" id="totalDiceRoll1">22</p>
           </div>
@@ -32,19 +35,19 @@
       <section class="player2 col-6 text-center bg-white">
         <div class="row justify-content-center">
           <div class="user col-12 p-0 m-0">
-            <h2 id="player2Name">PLAYER 2</h2>
+            <p id="player2Name" class="fs-1">PLAYER 2</p>
             <p id="player2Score">43</p>
           </div>
-          <div class="currentRound col-2 px-1 m-1 current bg-danger">
+          <div class="currentRound col-2 px-1 my-1 mx-4 current bg-danger">
             <p class="px-2 m-2 fs-6">CURRENT</p>
-            <p class="p-0 m-0 text-light fs-3" id="totalDiceRoll2">10</p>
+            <p class="p-0 m-0 text-light fs-3" id="totalDiceRoll2">57</p>
           </div>
         </div>
       </section>
     </main>
     <footer>
       <div class="row justify-content-center">
-        <p class="gameSettings col-6 col-sm-4 col-lg-3" id="rollDice"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-arrow-repeat p-1 text-danger" viewBox="0 0 16 16">
+        <p class="gameSettings col-6 col-sm-4 col-lg-3 mx-2" id="rollDice"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-arrow-repeat p-1 text-danger" viewBox="0 0 16 16">
           <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
           <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
           </svg>ROLL DICE
@@ -59,9 +62,6 @@
         </p>
       </div>
     </footer>
-    <div class="row justify-content-center">
-      <img id="diceFace" src="images/images/Dice1.png" alt="DiceFace">
-    </div>
   <script src="script.js"></script>
 </body>
 </html>

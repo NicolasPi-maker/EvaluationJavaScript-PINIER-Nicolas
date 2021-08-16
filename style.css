@@ -21,8 +21,9 @@ section {
 
 .currentRound {
   position: relative;
-  top: 18em;
+  top: 16em;
   width: auto;
+  margin: auto;
 }
 
 .gameSettings {
@@ -36,16 +37,16 @@ section {
 }
 
 #rollDice{
-  bottom: 11.5em;
+  bottom: 11.25em;
 }
 
 #hold{
-  bottom: 12em;
+  bottom: 11.75em;
 }
 
 #diceFace {
   position: relative;
-  bottom: 35.5em;
+  top: 22em;
   width: 6.5em;
   height: 5.25em;
 }
