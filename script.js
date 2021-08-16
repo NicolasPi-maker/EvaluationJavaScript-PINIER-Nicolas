@@ -15,13 +15,13 @@ const newGame = document.getElementsByClassName('newGame');
 const rollDice = document.getElementById('rollDice');
 const hold = document.getElementById('hold');
 
-//Set Game's variables
-let currentPlayer = null;
-let diceNumber = null;
-
 //red Dot
 let redDot1 = document.getElementById('redDot1');
 let redDot2 = document.getElementById('redDot2');
+
+//Set Game's variables
+let currentPlayer = null;
+let diceNumber = null;
 
 //New Game Function
 for(let i =0;i < newGame.length;i++) {
@@ -144,10 +144,10 @@ const playerTurnIndicator = () => {
 //End Game Condition
 const endGame = () => {
   if(parseInt(player1Score.innerHTML) >= 100) {
-    alert(`Player ${currentPlayer} remporte la partie ! `);
+    alert(`Player 1 remporte la partie avec ${player1Score.innerHTML} points !`);
     endGameDisplay();
   } else if(parseInt(player2Score.innerHTML) >= 100) {
-    alert(`Player ${currentPlayer} remporte la partie ! `);
+    alert(`Player 2 remporte la partie avec ${player2Score.innerHTML} points !`);
     endGameDisplay();
   }
 }
