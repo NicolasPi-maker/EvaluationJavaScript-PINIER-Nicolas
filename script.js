@@ -19,8 +19,9 @@ const hold = document.getElementById('hold');
 let currentPlayer = null;
 let diceNumber = null;
 
-//Modal text elements
-let winnerPlayer = document.getElementById('winnerPlayer');
+//red Dot
+let redDot1 = document.getElementById('redDot1');
+let redDot2 = document.getElementById('redDot2');
 
 //New Game Function
 for(let i =0;i < newGame.length;i++) {
@@ -128,21 +129,25 @@ const changePlayer = () => {
 //Current player turn indicator
 const playerTurnIndicator = () => {
   if(currentPlayer !== 1) {
+    redDot2.style.display = 'none'
+    redDot1.style.display = 'inline-block'
     player1Name.style.fontWeight = 'bold';
     player2Name.style.fontWeight = 'normal';
   } else {
     player2Name.style.fontWeight = 'bold';
     player1Name.style.fontWeight = 'normal';
+    redDot1.style.display = 'none'
+    redDot2.style.display = 'inline-block'
   }
 };
 
 //End Game Condition
 const endGame = () => {
   if(parseInt(player1Score.innerHTML) >= 100) {
-    alert(`Player 1 remporte la partie ! `);
+    alert(`Player ${currentPlayer} remporte la partie ! `);
     endGameDisplay();
   } else if(parseInt(player2Score.innerHTML) >= 100) {
-    alert(`Player 1 remporte la partie ! `);
+    alert(`Player ${currentPlayer} remporte la partie ! `);
     endGameDisplay();
   }
 }

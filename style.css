@@ -6,7 +6,7 @@
 
 body {
   font-family: Lato;
-  background: url(images/images/background.jpg);
+  background-image: url(images/images/background.jpg);
 }
 
 section {
@@ -22,7 +22,7 @@ section {
 
 .currentRound {
   position: relative;
-  top: 16em;
+  top: 15.5em;
   width: auto;
   margin: auto;
 }
@@ -64,4 +64,26 @@ section {
 .gameSettings:hover{
   color: crimson;
   cursor: pointer;
+}
+
+/*Set player name flex position for red dot indicator*/
+#player1Name,#player2Name {
+  display: inline-block;
+}
+
+
+#redDot1 {
+  display: none;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 0.37em;
+  background-color: crimson;
+}
+
+#redDot2 {
+  display: none;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 0.37em;
+  background-color: crimson;
 }
