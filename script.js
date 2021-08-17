@@ -19,6 +19,10 @@ const hold = document.getElementById('hold');
 let redDot1 = document.getElementById('redDot1');
 let redDot2 = document.getElementById('redDot2');
 
+//Modal display end game player win
+let myModal = new bootstrap.Modal(document.getElementById('winnerModal'),);
+let winnerText = document.getElementById('winnerText');
+
 //Set Game's variables
 let currentPlayer = null;
 let diceNumber = null;
@@ -26,7 +30,6 @@ let diceNumber = null;
 //New Game Function
 for(let i =0;i < newGame.length;i++) {
   newGame[i].addEventListener('click',() => {
-    alert('Nouvelle Partie !');
     resetGame();
     currentPlayer = Math.floor(Math.random()*2);
     StartPlayerPing(currentPlayer);
@@ -40,7 +43,6 @@ const resetGame = () => {
   displayFace(1);
   rollDice.style.display = 'block';
   hold.style.display = 'block';
-  hold.setAttribute('data-bs-toggle',"");
 };
 
 //Reset all global score
@@ -62,9 +64,9 @@ const resetCurrentScore = () => {
 //indicate current player turn
 const StartPlayerPing = (number) => {
   if(number === 0) {
-    alert(`Player ${number+1} Commence !`);
+    alert(`Nouvelle partie, Player ${number+1} Commence !`);
   } else {
-    alert(`Player ${number+1} Commence !`);
+    alert(`Nouvelle partie, Player ${number+1} Commence !`);
   }
   playerTurnIndicator();
 };
@@ -144,10 +146,10 @@ const playerTurnIndicator = () => {
 //End Game Condition
 const endGame = () => {
   if(parseInt(player1Score.innerHTML) >= 100) {
-    alert(`Player 1 remporte la partie avec ${player1Score.innerHTML} points !`);
+    winnerText.innerHTML = `Player 1 remporte la partie avec ${player1Score.innerHTML} points !`;
     endGameDisplay();
   } else if(parseInt(player2Score.innerHTML) >= 100) {
-    alert(`Player 2 remporte la partie avec ${player2Score.innerHTML} points !`);
+    winnerText.innerHTML = `Player 2 remporte la partie avec ${player2Score.innerHTML} points !`;
     endGameDisplay();
   }
 }
@@ -156,4 +158,5 @@ const endGame = () => {
 const endGameDisplay = () => {
   rollDice.style.display = 'none';
   hold.style.display = 'none';
+  myModal.show();
 }

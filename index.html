@@ -7,7 +7,31 @@
   <link rel="stylesheet" href="style.css">
   <title>Evaluation - JAVASCRIPT</title>
 </head>
+<!--Create Bootstrap Modal for end game-->
+<div 
+  class="modal fade" 
+  id="winnerModal" 
+  data-bs-backdrop="static" 
+  data-bs-keyboard="false" 
+  tabindex="-1" 
+  aria-labelledby="staticBackdropLabel" 
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center">Partie Terminée</h5>
+      </div>
+      <div class="modal-body">
+        <p id="winnerText"></p>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quitter</button>
+        <button type="button" class="newGame btn btn-primary" data-bs-dismiss="modal">New Game</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Set up Boostrap grid-->
 <body class="container">
+  <!--Place dice img-->
   <div class="row justify-content-center">
     <img id="diceFace" src="images/images/Dice1.png" alt="DiceFace">
   </div>
@@ -19,6 +43,7 @@
     </p>
   </header>
   <main class="row">
+    <!--Start section for player 1-->
     <section class="player1 col-6 text-center bg-light align-items-center">
       <div class="row justify-content-center">
         <div class="user col-12 p-0 m-0">
@@ -32,6 +57,8 @@
         </div>
       </div>
     </section>
+    <!--End section player 1-->
+    <!--Start section for player 2-->
     <section class="player2 col-6 text-center bg-white">
       <div class="row justify-content-center">
         <div class="user col-12 p-0 m-0">
@@ -45,8 +72,10 @@
         </div>
       </div>
     </section>
+    <!--End section player 2-->
   </main>
   <footer>
+    <!--Roll dice element-->
     <div class="row justify-content-center">
       <p class="gameSettings col-6 col-sm-4 col-lg-3 mx-2" id="rollDice">
         <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-arrow-repeat p-1 text-danger" viewBox="0 0 16 16">
@@ -55,8 +84,9 @@
         </svg>ROLL DICE
       </p>
     </div>
+    <!--Hold element to add the current player number to round count-->
     <div class="row justify-content-center">
-      <p class="gameSettings col-6 col-sm-4 col-lg-3" id="hold" data-bs-toggle="" data-bs-target="#playerWinModal">
+      <p class="gameSettings col-6 col-sm-4 col-lg-3" id="hold">
         <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-box-arrow-in-down p-1 mb-1 text-danger" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
           <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
