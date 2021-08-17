@@ -38,12 +38,12 @@ section {
 }
 
 #rollDice{
-  bottom: 11.25em;
+  bottom: 12em;
   display: none;
 }
 
 #hold{
-  bottom: 11.75em;
+  bottom: 12.5em;
   display: none;
 }
 
